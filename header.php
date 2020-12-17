@@ -1,6 +1,4 @@
 <?php
-if (empty($_SESSION["admin"]))
-  header('Location: login.php');
 echo '
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">

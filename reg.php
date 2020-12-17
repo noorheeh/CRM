@@ -1,7 +1,7 @@
 <?php
-
 session_start();
-
+if(empty($_SESSION["admin"]))
+  header('Location: login.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,7 +78,6 @@ session_start();
       <div class="card-body register-card-body">
         <p class="login-box-msg">Register a new membership</p>
         <p id="message" class="bg-danger"></p>
-        <form  method="post">
           <div class="input-group mb-3">
             <input id="name" type="text" class="form-control" placeholder="Full name">
             <div class="input-group-append">
@@ -121,7 +120,6 @@ session_start();
             <p class="password_error_text2 bg-danger"></p>
           </span>
           <button id="submit" type="submit" class="btn btn-primary btn-block">Register</button>
-        </form>
       </div>
       <!-- /.form-box -->
     </div><!-- /.card -->
