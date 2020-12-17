@@ -2,6 +2,8 @@
 session_start();
 if (empty($_SESSION["user"]))
   header('Location: login.php');
+if (!empty($_SESSION["admin"]))
+  header('Location: reg.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

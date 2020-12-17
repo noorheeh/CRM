@@ -22,76 +22,118 @@ session_start();
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
 
-   <?php 
-   include 'header.php';
-   ?>
+   <!-- Navbar -->
+   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.php" class="nav-link">Home</a>
+      </li>
+    </ul>
 
-   <div class="register-page">
-    <div class="register-box">
-      <div class="register-logo">
-        <a href="index2.html"><b>Admin</b>LTE</a>
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <!-- Nav Item - User Information -->
+      <li class="nav-item dropdown no-arrow">
+        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img class="img-profile rounded-circle" width="30" height="30" 
+        src="dist/img/user.jpg">
+        <span class="mr-2 d-none d-lg-inline"><?php echo $_SESSION["admin"];?></span>
+      </a>
+      <!-- Dropdown - User Information -->
+      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+      aria-labelledby="userDropdown">
+      <a class="dropdown-item" href="#">
+        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+        Profile
+      </a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="logout.php">
+        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+        Logout
+      </a>
+    </div>
+  </li>
+</ul>
+</nav>
+<!-- /.navbar -->
+
+<div class="register-page">
+  <div class="register-box">
+    <div class="register-logo">
+      <a href="index2.html"><b>Admin</b>LTE</a>
+    </div>
+
+    <div class="card">
+      <div class="card-body register-card-body">
+        <p class="login-box-msg">Register a new membership</p>
+        <p id="message" class="bg-danger"></p>
+        <form  method="post">
+          <div class="input-group mb-3">
+            <input id="name" type="text" class="form-control" placeholder="Full name">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <span>
+            <p class="email_error_text bg-danger"></p>
+          </span>
+          <div class="input-group mb-3">
+            <input id="email" type="email" class="form-control" placeholder="Email">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+          <span>
+            <p class="password_error_text bg-danger"></p>
+          </span>
+          <div class="input-group mb-3">
+            <input id="password" type="password" class="form-control" placeholder="Password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input id="rePassword" type="password" class="form-control" placeholder="Retype password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+          <span>
+            <p class="password_error_text2 bg-danger"></p>
+          </span>
+          <button id="submit" type="submit" class="btn btn-primary btn-block">Register</button>
+        </form>
       </div>
-
-      <div class="card">
-        <div class="card-body register-card-body">
-          <p class="login-box-msg">Register a new membership</p>
-          <p id="message" class="bg-danger"></p>
-          <form  method="post">
-            <div class="input-group mb-3">
-              <input id="name" type="text" class="form-control" placeholder="Full name">
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-user"></span>
-                </div>
-              </div>
-            </div>
-            <span>
-              <p class="email_error_text bg-danger"></p>
-            </span>
-            <div class="input-group mb-3">
-              <input id="email" type="email" class="form-control" placeholder="Email">
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-envelope"></span>
-                </div>
-              </div>
-            </div>
-            <span>
-              <p class="password_error_text bg-danger"></p>
-            </span>
-            <div class="input-group mb-3">
-              <input id="password" type="password" class="form-control" placeholder="Password">
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-lock"></span>
-                </div>
-              </div>
-            </div>
-            <div class="input-group mb-3">
-              <input id="rePassword" type="password" class="form-control" placeholder="Retype password">
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-lock"></span>
-                </div>
-              </div>
-            </div>
-            <span>
-              <p class="password_error_text2 bg-danger"></p>
-            </span>
-            <button id="submit" type="submit" class="btn btn-primary btn-block">Register</button>
-          </form>
-        </div>
-        <!-- /.form-box -->
-      </div><!-- /.card -->
-    </div>
-    <!-- /.register-box -->
+      <!-- /.form-box -->
+    </div><!-- /.card -->
   </div>
-  <footer class="main-footer">
-    <div class="float-right d-none d-sm-block">
-      <b>Version</b> 3.1.0-rc
-    </div>
-    <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
-  </footer>
+  <!-- /.register-box -->
+</div>
+<footer class="main-footer">
+  <div class="float-right d-none d-sm-block">
+    <b>Version</b> 3.1.0-rc
+  </div>
+  <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+</footer>
 </div>
 <!-- ./wrapper -->
 
