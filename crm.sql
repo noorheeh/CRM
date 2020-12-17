@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 17, 2020 at 05:07 PM
+-- Generation Time: Dec 17, 2020 at 07:17 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -25,6 +25,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE IF NOT EXISTS `admin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `password`, `email`) VALUES
+(1, 'noorheeh', '$2y$10$UcsjVobqX2WBagyH8XPp1.68n31dl4pepQvtygnp3.ueYTqmIY0TG', 'noorheeh@outlook.com');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customer`
 --
 
@@ -37,16 +59,6 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `problem` varchar(255) NOT NULL,
   PRIMARY KEY (`phone`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `customer`
---
-
-INSERT INTO `customer` (`user_id`, `name`, `phone`, `service`, `problem`) VALUES
-(1, 'noor heeh', '0597635460', 'test', 'test'),
-(1, 'noor', '0597635461', 'asdsa', 'sdasd'),
-(1, 'sada', '0597635462', 'dsadad', 'asdas'),
-(1, 'nico', '0597635465', 'stest', 'test');
 
 -- --------------------------------------------------------
 
@@ -64,17 +76,7 @@ CREATE TABLE IF NOT EXISTS `event` (
   `backgroundColor` varchar(255) NOT NULL,
   `borderColor` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `event`
---
-
-INSERT INTO `event` (`id`, `user_id`, `title`, `start`, `end`, `backgroundColor`, `borderColor`) VALUES
-(58, 1, 'Go home', 'Tue Dec 08 2020 00:00:00 GMT+0200 (Eastern European Standard Time)', 'Wed Dec 09 2020 00:00:00 GMT+0200 (Eastern European Standard Time)', 'rgb(255, 193, 7)', 'rgb(255, 193, 7)'),
-(59, 1, 'Go home', 'Tue Dec 08 2020 02:00:00 GMT+0200 (Eastern European Standard Time)', 'Fri Dec 11 2020 02:00:00 GMT+0200 (Eastern European Standard Time)', 'rgb(255, 193, 7)', 'rgb(255, 193, 7)'),
-(60, 1, 'Work on UI design', 'Tue Dec 15 2020 00:00:00 GMT+0200 (Eastern European Standard Time)', 'Wed Dec 16 2020 00:00:00 GMT+0200 (Eastern European Standard Time)', 'rgb(0, 123, 255)', 'rgb(0, 123, 255)'),
-(61, 1, 'Lunch', 'Mon Dec 14 2020 09:00:00 GMT+0200 (Eastern European Standard Time)', 'Tue Dec 15 2020 09:00:00 GMT+0200 (Eastern European Standard Time)', 'rgb(40, 167, 69)', 'rgb(40, 167, 69)');
+) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -89,16 +91,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `name`, `password`, `email`) VALUES
-(1, 'noor heeh', '$2y$10$UcsjVobqX2WBagyH8XPp1.68n31dl4pepQvtygnp3.ueYTqmIY0TG', 'noorxb64@gmail.com'),
-(2, 'nicola', '$2y$10$RQG85nKaOeUYh8IKEKGy1uV3VuZGQpkSMduC1NPo8WjlMmKTfB4ia', 'noorxb31@gmail.com'),
-(3, 'dsa', '$2y$10$egxWbDnnINW1S5bHA8NZCeBr6h6pExPE3FpB4oNN8620zrnVHhvB.', '');
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
