@@ -74,8 +74,7 @@ if (empty($_SESSION["user"]))
                          <td>'.$row["service"].'</td>
                          <td>'.$row["problem"].'</td>
                          <td><button id="delete" class="btn btn-danger" onclick="deleteCustomer('.$row["phone"].')">delete</button></td>
-                         </tr>
-                          <td><button id="delete" class="btn btn-danger" onclick="deleteCustomer('.$row["phone"].')">delete</button></td>';
+                         </tr>';
                        }
                      }
                      ?>
