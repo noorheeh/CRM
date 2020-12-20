@@ -54,6 +54,7 @@ if (empty($_SESSION["user"]))
                         <th>Phone Number</th>
                         <th>Service</th>
                         <th>Problem</th>
+                        <th>delete</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -73,7 +74,7 @@ if (empty($_SESSION["user"]))
                          <td>'.$row["phone"].'</td>
                          <td>'.$row["service"].'</td>
                          <td>'.$row["problem"].'</td>
-                         <td><button id="delete" class="btn btn-danger" onclick="deleteCustomer('.$row["phone"].')">delete</button></td>
+                         <td><button id="delete" class="btn btn-danger" onclick="deleteCustomer(\''.$row["phone"].'\')">delete</button></td>
                          </tr>';
                        }
                      }
@@ -128,18 +129,9 @@ if (empty($_SESSION["user"]))
 <script>
   $(function () {
     $("#customers").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "responsive": true, "lengthChange": true, "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#customers_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
   });
 
    function deleteCustomer(phone) {
@@ -152,7 +144,7 @@ if (empty($_SESSION["user"]))
         data: myData,         
         success: function(response){
              alert(response);
-    $( ".content" ).load(window.location.href + " .content" ); 
+    $( 'body' ).load(window.location.href); 
     }
   });
 }
