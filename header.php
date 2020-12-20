@@ -31,12 +31,12 @@ src="dist/img/user.jpg">
 <!-- Dropdown - User Information -->
 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
 aria-labelledby="userDropdown">
-<a class="dropdown-item" href="#">
+<a id="profile" class="dropdown-item" href="#">
 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
 Profile
 </a>
 <div class="dropdown-divider"></div>
-<a class="dropdown-item" href="logout.php">
+<a id="logout" class="dropdown-item" href="logout.php">
 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 Logout
 </a>
@@ -49,7 +49,7 @@ Logout
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 <!-- Brand Logo -->
-<a href="index.php" class="brand-link">
+<a id="index" href="index.php" class="brand-link">
 <img src="dist/img/crm.jpg" alt="CRM Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
 <span class="brand-text font-weight-light">CRM</span>
 </a>
@@ -60,24 +60,24 @@ Logout
 <!-- Sidebar Menu -->
 <nav class="mt-2">
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-<li class="nav-item">
-<a href="index.php" class="nav-link">
+<li class="nav-item home">
+<a id="home" href="index.php" class="nav-link">
 <i class="nav-icon fas fa-tachometer-alt"></i>
 <p>
 Home
 </p>
 </a>
 </li>
-<li class="nav-item">
-<a href="calendar.php" class="nav-link">
+<li class="nav-item calendar">
+<a id="calendar" href="calendar.php" class="nav-link">
 <i class="nav-icon far fa-calendar-alt"></i>
 <p>
 Calendar
 </p>
 </a>
 </li>
-<li class="nav-item">
-<a href="add_customer.php" class="nav-link">
+<li class="nav-item add-customer">
+<a id="add-customer" href="add_customer.php" class="nav-link">
 <i class="nav-icon fas fa-edit"></i>
 <p>
 Add Customer

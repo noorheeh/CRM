@@ -73,6 +73,7 @@ if (empty($_SESSION["user"]))
                          <td>'.$row["phone"].'</td>
                          <td>'.$row["service"].'</td>
                          <td>'.$row["problem"].'</td>
+                         <td><button id="delete" class="btn btn-danger" onclick="deleteCustomer('.$row["phone"].')">delete</button></td>
                          </tr>';
                        }
                      }
@@ -140,6 +141,22 @@ if (empty($_SESSION["user"]))
       "responsive": true,
     });
   });
+
+   function deleteCustomer(phone) {
+    var myData = {
+  'phone': phone
+  };
+      $.ajax({    
+        type: "POST",
+        url: "delete_customer.php",             
+        data: myData,         
+        success: function(response){
+             alert(response);
+    $( ".content" ).load(window.location.href + " .content" ); 
+    }
+  });
+}
+
 </script>
 </body>
 </html>

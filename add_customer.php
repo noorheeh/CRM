@@ -116,12 +116,17 @@ if (empty($_SESSION["user"]))
 <script src="dist/js/demo.js"></script>
 <script type="text/javascript">
   $(document).ready(function () {
+    //when submit form do this:
     $("#submit").click(function () {
+      //store name value from name input in name variable
       var name = $("#name").val();
+      //store phone number from phone input in phone variable
       var phone = $("#phone").val();
+      //store service from service input in service variable
       var service = $("#service").val();
+      //store problem from problem input in problem variable
       var problem = $("#problem").val();
-      console.log(problem);
+
       if (name.length=="" || phone.length == "" || service.length == ""){
         $("#message").html("please fill out this field first").fadeIn();
         $("#message").addClass("error");
