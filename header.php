@@ -68,8 +68,8 @@ Home
 </p>
 </a>
 </li>
-<li class="nav-item calendar">
-<a id="calendar" href="calendar.php" class="nav-link">
+<li class="nav-item calendarHome">
+<a id="calendarHome" href="calendar.php" class="nav-link">
 <i class="nav-icon far fa-calendar-alt"></i>
 <p>
 Calendar
